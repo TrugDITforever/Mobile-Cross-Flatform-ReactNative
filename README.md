@@ -43,11 +43,14 @@ npm install
 ```
 
 
-## Demo
-# Check-in Form
-![alt text](image.png)
-# Map View
-![alt text](image.png)
-![alt text](image.png)
-# List check-ins
-![alt text](image.png)
+## 🧭 Demo
+
+### 🏠 Check-in Form
+<img src="image-1.jpg" alt="Check-in Form" width="400"/>
+
+### 🗺 Map View
+<img src="image-2.jpg" alt="Map View" width="400"/>
+<img src="image-4.jpg" alt="Map View 2" width="400"/>
+
+### 📋 List of Check-ins
+<img src="image-3.jpg" alt="List Check-ins" width="400"/>
