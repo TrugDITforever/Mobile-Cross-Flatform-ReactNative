@@ -1,50 +1,53 @@
-# Welcome to your Expo app 👋
+# 📍 Geo-Checkin — GPS-Based Check-in Tracker
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Geo-Checkin** is a modern cross-platform mobile app built with **Expo + React Native + TypeScript** that allows users to **check in their current GPS location**, save notes, and view all visited places on an interactive map.
 
-## Get started
+Each check-in is stored locally using AsyncStorage and displayed as a marker on the map.  
+Users can tap any marker to view details or open Google Maps for navigation.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## ✨ Features
 
-2. Start the app
+- 🌍 **Check-in with GPS** — capture your current latitude & longitude with one tap  
+- 📝 **Add custom notes** to each check-in (e.g., “Cà phê sáng ở quán A”, “Tham quan công viên B”)  
+- 🗺 **Map View** — visualize all saved locations with interactive markers  
+- 🧭 **Open in Google Maps / Apple Maps** directly from a marker  
+- 💾 **Offline-first** — stores all check-ins locally using `@react-native-async-storage/async-storage`  
+- 🧩 **Tabbed Navigation UI** — 3 clean sections:
+  - **Check-in:** add a new location
+  - **Map:** see all check-ins
+  - **List:** view all records with date/time
+- 🎨 **Beautiful modern UI** — React Native Paper + Material icons + gradient tab bar
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🛠 Tech Stack
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+| Layer | Technology |
+|--------|-------------|
+| Framework | **Expo (React Native + TypeScript)** |
+| UI Library | `react-native-paper`, `expo-linear-gradient` |
+| Map | `react-native-maps` |
+| Location | `expo-location` |
+| Storage | `@react-native-async-storage/async-storage` |
+| Navigation | Expo Router (Bottom Tabs) |
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## ⚙️ Setup and Run Locally
 
-When you're ready, run:
-
+### 1️⃣ Install dependencies
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Demo
+# Check-in Form
+![alt text](image.png)
+# Map View
+![alt text](image.png)
+![alt text](image.png)
+# List check-ins
+![alt text](image.png)

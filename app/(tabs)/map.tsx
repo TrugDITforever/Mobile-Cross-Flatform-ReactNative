@@ -31,7 +31,7 @@ export default function MapPage() {
   if (Platform.OS === "web")
     return (
       <View style={styles.center}>
-        <Text>🧭 Bản đồ không hỗ trợ trên web.</Text>
+        <Text>🧭 Map view is not supported on web.</Text>
       </View>
     );
 

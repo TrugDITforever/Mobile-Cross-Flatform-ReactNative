@@ -13,7 +13,7 @@ export default function CheckinPage() {
     (async () => {
       const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== "granted") {
-        Alert.alert("Không có quyền truy cập vị trí!");
+        Alert.alert("Permission denied!", "Location access is required for check-in.");
         return;
       }
       const loc = await Location.getCurrentPositionAsync({});
@@ -24,34 +24,34 @@ export default function CheckinPage() {
   }, []);
 
   const handleCheckin = async () => {
-    if (!location) return Alert.alert("Chưa lấy được vị trí GPS!");
+    if (!location) return Alert.alert("No GPS location detected!", "Please try again.");
     const newCheckin: Checkin = {
       lat: location.latitude,
       lng: location.longitude,
-      note: note || "Không có ghi chú",
+      note: note || "No note provided",
       time: new Date().toISOString(),
     };
     const updated = [...checkins, newCheckin];
     await saveCheckins(updated);
     setCheckins(updated);
     setNote("");
-    Alert.alert("✅ Check-in thành công!");
+    Alert.alert("✅ Check-in successful!");
   };
 
   return (
     <View style={styles.container}>
       <Card style={styles.card} mode="elevated">
-        <Card.Title title="📍 Check-in vị trí hiện tại" />
+        <Card.Title title="📍 Check-in at Current Location" />
         <Card.Content>
           <TextInput
-            label="Ghi chú"
+            label="Note"
             value={note}
             mode="outlined"
             onChangeText={setNote}
-            style={{ marginBottom: 15 }}
+            style={{ marginBottom: 15, borderRadius: 15 }}
           />
           <Button mode="contained" onPress={handleCheckin}>
-            Lưu Check-in
+            Save Check-in
           </Button>
         </Card.Content>
       </Card>
@@ -60,6 +60,14 @@ export default function CheckinPage() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", padding: 16, backgroundColor: "#f5f6fa" },
-  card: { borderRadius: 16, elevation: 4 },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    padding: 16,
+    backgroundColor: "#f5f6fa",
+  },
+  card: {
+    borderRadius: 16,
+    elevation: 4,
+  },
 });
